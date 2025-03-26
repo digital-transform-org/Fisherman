@@ -12,3 +12,4 @@ public class FishermanApplication {
         SpringApplication.run(FishermanApplication.class, args);
     }
 }
+
