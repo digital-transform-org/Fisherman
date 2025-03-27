@@ -27,7 +27,7 @@ public class PredictionLinkerService {
     public void loadPredictions() {
         File file = new File("predicted-activity.json");
         if (!file.exists()) {
-            System.err.println("Prediction file not found. Skipping linkage.");
+            System.err.println("⚠️ Prediction file not found. Skipping linkage.");
             return;
         }
 
@@ -38,18 +38,27 @@ public class PredictionLinkerService {
                 int activity = node.get("predictedActivity").asInt();
                 predictionsByTimestamp.put(timestamp, activity);
             }
+            System.out.println("✅ Loaded " + predictionsByTimestamp.size() + " predictions.");
         } catch (IOException e) {
-            System.err.println("Error reading prediction file: " + e.getMessage());
+            System.err.println("❌ Failed to read predictions: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
     public List<LinkedPrediction> getLinkedPredictions() {
         List<LinkedPrediction> linked = new ArrayList<>();
-        for (EnvironmentalObservation obs : repository.findAll()) {
-            LocalDateTime ts = obs.getTimestamp();
-            if (predictionsByTimestamp.containsKey(ts)) {
-                linked.add(new LinkedPrediction(obs, predictionsByTimestamp.get(ts)));
+        try {
+            Iterable<EnvironmentalObservation> all = repository.findAll();
+            for (EnvironmentalObservation obs : all) {
+                LocalDateTime ts = obs.getTimestamp();
+                if (predictionsByTimestamp.containsKey(ts)) {
+                    linked.add(new LinkedPrediction(obs, predictionsByTimestamp.get(ts)));
+                }
             }
+            System.out.println("✅ Linked " + linked.size() + " predictions to observations.");
+        } catch (Exception e) {
+            System.err.println("❌ Failed to link predictions: " + e.getMessage());
+            e.printStackTrace();
         }
         return linked;
     }

@@ -53,8 +53,14 @@
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 	<!-- This is the updated package that replaces javax.annotation -->
-	<dependency>
-  	    <groupId>jakarta.annotation</groupId>
+	    <dependency>
+  	        <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+            <version>2.1.1</version>
+        </dependency>
+    <!-- This is for Jakarta annotations (PostConstruct) -->    
+        <dependency>
+             <groupId>jakarta.annotation</groupId>
             <artifactId>jakarta.annotation-api</artifactId>
             <version>2.1.1</version>
         </dependency>

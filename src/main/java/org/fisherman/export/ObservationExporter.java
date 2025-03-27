@@ -25,11 +25,17 @@ public class ObservationExporter {
     public void exportObservationsToJson() {
         try {
             List<EnvironmentalObservation> observations = (List<EnvironmentalObservation>) repository.findAll();
+            if (observations.isEmpty()) {
+                System.out.println("⚠️ No observations found to export.");
+                return;
+            }
+
             File outputFile = new File("observations-export.json");
             objectMapper.writerWithDefaultPrettyPrinter().writeValue(outputFile, observations);
             System.out.println("✅ Exported " + observations.size() + " observations to observations-export.json");
-        } catch (IOException e) {
-            System.err.println("❌ Failed to export observations: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("❌ ObservationExporter failed: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 }

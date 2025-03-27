@@ -18,8 +18,93 @@ public class EnvironmentalObservation {
     private Double precipitation;
     private String moonPhase;
 
-    // Getters and setters omitted for brevity
- public LocalDateTime getTimestamp() {
-    return timestamp;
-}
+    // Getters and setters
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public Double getAirTemperature() {
+        return airTemperature;
+    }
+
+    public void setAirTemperature(Double airTemperature) {
+        this.airTemperature = airTemperature;
+    }
+
+    public Double getWaterTemperature() {
+        return waterTemperature;
+    }
+
+    public void setWaterTemperature(Double waterTemperature) {
+        this.waterTemperature = waterTemperature;
+    }
+
+    public Double getAirPressure() {
+        return airPressure;
+    }
+
+    public void setAirPressure(Double airPressure) {
+        this.airPressure = airPressure;
+    }
+
+    public Double getWaterLevel() {
+        return waterLevel;
+    }
+
+    public void setWaterLevel(Double waterLevel) {
+        this.waterLevel = waterLevel;
+    }
+
+    public Double getWindSpeed() {
+        return windSpeed;
+    }
+
+    public void setWindSpeed(Double windSpeed) {
+        this.windSpeed = windSpeed;
+    }
+
+    public String getWindDirection() {
+        return windDirection;
+    }
+
+    public void setWindDirection(String windDirection) {
+        this.windDirection = windDirection;
+    }
+
+    public Double getCloudCover() {
+        return cloudCover;
+    }
+
+    public void setCloudCover(Double cloudCover) {
+        this.cloudCover = cloudCover;
+    }
+
+    public Double getPrecipitation() {
+        return precipitation;
+    }
+
+    public void setPrecipitation(Double precipitation) {
+        this.precipitation = precipitation;
+    }
+
+    public String getMoonPhase() {
+        return moonPhase;
+    }
+
+    public void setMoonPhase(String moonPhase) {
+        this.moonPhase = moonPhase;
+    }
 }
