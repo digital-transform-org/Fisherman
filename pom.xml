@@ -58,12 +58,6 @@
             <artifactId>jakarta.annotation-api</artifactId>
             <version>2.1.1</version>
         </dependency>
-    <!-- This is for Jakarta annotations (PostConstruct) -->    
-        <dependency>
-             <groupId>jakarta.annotation</groupId>
-            <artifactId>jakarta.annotation-api</artifactId>
-            <version>2.1.1</version>
-        </dependency>
     </dependencies>
 
     <build>
