@@ -18,6 +18,32 @@ public class EnvironmentalObservation {
     private Double precipitation;
     private String moonPhase;
 
+    public EnvironmentalObservation(
+    Long id,
+    LocalDateTime timestamp,
+    Double airTemperature,
+    Double waterTemperature,
+    Double airPressure,
+    Double waterLevel,
+    Double windSpeed,
+    String windDirection,
+    Double cloudCover,
+    Double precipitation,
+    String moonPhase
+) {
+    this.id = id;
+    this.timestamp = timestamp;
+    this.airTemperature = airTemperature;
+    this.waterTemperature = waterTemperature;
+    this.airPressure = airPressure;
+    this.waterLevel = waterLevel;
+    this.windSpeed = windSpeed;
+    this.windDirection = windDirection;
+    this.cloudCover = cloudCover;
+    this.precipitation = precipitation;
+    this.moonPhase = moonPhase;
+}
+
     // Getters and setters
 
     public Long getId() {
