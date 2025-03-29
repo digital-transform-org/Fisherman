@@ -1,0 +1,25 @@
+# Java + Maven + VS Code + OS stuff
+
+# Maven
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ / VS Code
+.idea/
+.vscode/
+*.iml
+
+# System
+.DS_Store
+
+# Logs
+*.log
+
+# H2 / DB
+*.mv.db
+*.h2.db
+
+# Export files
+observations-export.json
+predicted-activity.json
+
